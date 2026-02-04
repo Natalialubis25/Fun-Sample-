@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Receh Tapi Bahagia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-pink-200 via-yellow-100 to-purple-200 min-h-screen flex items-center justify-center">
+  <div class="bg-white rounded-3xl shadow-xl p-8 max-w-md w-full text-center">
+    <h1 class="text-3xl font-bold mb-2">😆 Website Lelucuan</h1>
+    <p class="text-gray-600 mb-6">Klik tombolnya kalau hidup lagi berat</p>
+
+    <div id="joke" class="text-lg font-medium mb-6 min-h-[80px] flex items-center justify-center">
+      Siap-siap ketawa...
+    </div>
+
+    <button onclick="generateJoke()" class="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-full font-semibold transition">
+      Bikin Aku Ketawa 🤡
+    </button>
+
+    <div class="mt-6 text-sm text-gray-400">Versi: receh tapi niat</div>
+  </div>
+
+  <script>
+    const jokes = [
+      "Aku bukan malas, aku cuma lagi mode hemat energi.",
+      "Hidup itu seperti WiFi… sinyalnya suka ilang pas dibutuhin.",
+      "Uang nggak bisa beli kebahagiaan, tapi bisa beli bakso.",
+      "Aku pengen kurus, tapi nasi bilang: jangan pergi.",
+      "Kerja keraslah sampai dompetmu gemuk.",
+      "Tidur siang adalah bentuk protes terhadap kenyataan.",
+      "Deadline itu cuma motivasi yang mendadak serius."
+    ];
+
+    function generateJoke() {
+      const random = Math.floor(Math.random() * jokes.length);
+      const jokeBox = document.getElementById('joke');
+      jokeBox.classList.add('opacity-0');
+      setTimeout(() => {
+        jokeBox.textContent = jokes[random];
+        jokeBox.classList.remove('opacity-0');
+      }, 200);
+    }
+  </script>
+</body>
+</html>
